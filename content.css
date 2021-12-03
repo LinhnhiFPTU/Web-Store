@@ -1,0 +1,127 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+.header-container {
+    position: relative;
+    background: #E9E9E9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;   
+}
+.slogan {
+    padding-left: 23px;
+    font-family: 'Abril Fatface', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 40px;
+    color: #000000;
+}
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    height: 42px;
+}
+.search input {
+    width: 406px;
+    height: 42px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+.search img {
+    width: 70px;
+    height: 42px;
+}
+.search-input {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 27px;
+    text-indent: 20px;
+    color: #767474;
+    text-align: left;
+}
+.search-input::placeholder {
+    color: black;
+}
+.items {
+    display: flex;
+    align-items: center;
+    padding-left: 122px;
+    height: 100px;
+}
+.items-icon1 {
+    width: 28px;
+    height: 42px;
+}
+.items-icon2 {
+    width: 57px;
+    height: 42px;
+    padding-left: 50px;
+}
+.sign-up {
+    display: flex;
+    align-items: center;
+}
+.sign-in {
+    display: flex;
+    align-items: center;
+}
+.items-text {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-left: 13px;
+}
+.sign-in .items-text {
+    padding-left: 7px;
+}
+.cart-icon {
+    width: 44px;
+    height: 42px;
+    padding-left: 50px;
+}
+.body-container {
+    display: flex;
+    position: relative;
+    left: 23px;
+}
+.menu-bar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 66px;
+}
+.shop-name {
+    font-family: 'Lobster Two', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 55px;
+    line-height: 64px;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.product-name {
+    margin-top: 50px;
+}
+.product-item {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 44px;  
+    color: #000000; 
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
