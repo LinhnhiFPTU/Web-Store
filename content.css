@@ -9,7 +9,7 @@ body {
     flex-wrap: nowrap;
     align-items: center;   
     box-sizing: border-box;
-    width: 100vw;
+    width: 100%;
     height: max-content;
     background: #E9E9E9;
     box-sizing: border-box;
@@ -104,8 +104,8 @@ body {
     display: flex;
     flex-direction: column;
     width: max-content;
-    top: 66px;
-    margin-left: 23px;
+    margin-left: 30px;
+    margin-top: 50px;;
 }
 .shop-name {
     font-family: 'Sansita Swashed', cursive;
@@ -130,4 +130,7 @@ body {
     line-height: 44px;  
     color: #000000; 
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.productArea{
+    margin-left: 20px;
 }
