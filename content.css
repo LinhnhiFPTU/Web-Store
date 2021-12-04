@@ -4,6 +4,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 .header-container {
+    position: relative;
     height: 100px;
     display: flex;
     flex-wrap: nowrap;
@@ -46,7 +47,6 @@ body {
     height: 42px;
 }
 .search-input {
-    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 23px;
@@ -104,10 +104,10 @@ body {
 .menu-bar {
     display: flex;
     flex-direction: column;
-    width: max-content;
-    margin-left: 23px;
-    margin-top: 30px;
     position: fixed;
+    width: max-content;
+    padding-left: 23px;
+    padding-top: 20px;
 }
 .shop-name {
     font-family: 'Sansita Swashed', cursive;
@@ -119,7 +119,7 @@ body {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .product-name {
-    margin-top: 20px;
+    margin-top: 55px;
     display: flex;
     flex-direction: column;
 }
@@ -127,16 +127,86 @@ body {
     text-decoration: none;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
     line-height: 44px;  
     color: #000000; 
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: 5px;
+    margin-top: -20px;
 }
+.account-infor {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-left: 370px;
+}
+.account-header {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 44px;
+    color: #000000;
+}
+.divider-bar {
+    margin-top: 15px;
+    margin-right: 23px;
+    height: 1px;   
+    background-color: black;
+}
+.infor-container {   
+    display: flex;  
+    margin-top: 44px;   
+}
+.infor {
+    width: 25%;
+    padding-left: 41px;
+    display: flex;
+    flex-direction: column;
+}
+.infor img {
+    width: 150px;
+    height: 150px;
+}
+.infor-header {
+    margin-top: 38px;
+}
+.infor-header a {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 44px;
+    color: #000000;
+}
+.edit {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 45px;
+    line-height: 57px;
+    color: #000000;
+}
+.edit-input {
+    width: 500px;
+    height: 55px;  
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 27px;
+}
+
 .productArea{
     padding-left: 370px;
     width: 100%;
     box-sizing: border-box;
+}
+.productContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .product{
     display: flex;
@@ -144,8 +214,15 @@ body {
     align-items: center;
 }
 .product > .productImg{
-    width: 190px;
-    height: 261px;
+    width: 235px;
+    height: 245px;
+}
+.product > .nameOfProduct{
+    font-family: 'Lemon', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 26px;
 }
 .productArea > .title{
     text-align: center;
