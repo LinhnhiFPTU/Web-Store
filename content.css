@@ -31,7 +31,6 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding-left: 25px;
     height: 42px;
 }
 .search input {
@@ -72,7 +71,7 @@
 .items-icon2 {
     width: 57px;
     height: 42px;
-    padding-left: 50px;
+    padding-left: 10px;
 }
 .sign-up {
     display: flex;
@@ -93,9 +92,13 @@
     text-decoration: none;
     padding: 0;
 }
+.link-page:hover{
+    color: blue
+}
 .items-text {   
     padding-left: 13px; 
     margin: 0;
+    width: 70px;
 }
 .sign-in .items-text {
     padding-left: 7px;
@@ -104,7 +107,7 @@
 .cart-icon {
     width: 44px;
     height: 42px;
-    padding-left: 50px;
+    padding-left: 20px;
     padding-right: 23px;
 }
 .body-container {
