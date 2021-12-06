@@ -389,12 +389,17 @@
     font-weight: 400px;
     font-size: 16px;
     padding-bottom: 30px;
+    cursor: pointer;
+}
+.subTitle:hover{
+    color: #2cccff;
 }
 .image-slider{
     display: flex;
     align-items: center;
 } 
 .image{
+    width: max-content;
     height: max-content;
 }
 .image img{
@@ -402,10 +407,17 @@
     height: 245px;
     object-fit: cover;
 }
-.details{
+.image-item > .details{
     width: 235px;
     font-size: 20px;
     text-align: center;
+    font-weight: bold;
+}
+.image-item > .price{
+    padding-top: 5px;
+    text-align: center;
+    font-size: 14px;
+    width: 235px;
 }
 .slick-arrow{
     position: absolute;
