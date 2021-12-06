@@ -1,4 +1,4 @@
-@media (max-width: 1200px) {
+@media (max-width: 75em) /*1200px*/ {
     .header-container{
         display: none;
     }
@@ -7,6 +7,25 @@
     }
     .menu-bar{
         display: none;
+    }
+    .menu {
+        display: block;
+    }
+    .menu-bar {
+        position: fixed;
+        width: max-content;
+        top: 0px;
+        right: 0px;
+        height: 100%;
+        z-index: 3;
+        background-color: #4D4C4C;
+        display: flex;
+        align-items: right;
+    }
+    .product-name {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
     .productArea{
         padding-left: 0;
@@ -17,10 +36,6 @@
     }
     }
 /*Mobile*/
-@media only screen and (max-width: 46.1875em) /*739px*/ {
+@media only screen and (max-width: 46.25em) /*739px*/ {
     
-}
-/*Tablet*/
-@media only screen and (min-width: 46.25em) /*740px*/ (max-width: 74.9375em) /*1200px*/ {
-
 }
