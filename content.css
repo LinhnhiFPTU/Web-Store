@@ -113,14 +113,6 @@
     position: relative;
     width: 100%;
 }
-/*Mobile*/
-@media only screen and (max-width: 46.1875em) /*739px*/ {
-    
-}
-/*Tablet*/
-@media only screen and (min-width: 46.25em) /*740px*/ (max-width: 74.9375em) /*1200px*/ {
-
-}
   /*--------------------------Account infor---------------------*/
 .menu-bar {
     display: flex;
