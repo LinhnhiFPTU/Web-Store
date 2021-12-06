@@ -1,3 +1,36 @@
+.header-container-mobile{
+    display: none;
+}
+.slogan-Mb{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 30px;
+    line-height: 40px;
+    color: #000000;
+    text-align: center;
+    background: #E9E9E9;
+}
+.shop-name-Mb{
+    text-align: center;
+    align-items: center;
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 60px;
+    line-height: 64px;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 20px 0;
+}
+.tool-bar{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    height: max-content;
+}
+.tool-bar > .menu-icon{
+    width: 65px;
+    height: 60px;
+    align-items: center;   
+}
+
 @media (max-width: 1200px) {
     .header-container{
         display: none;
@@ -16,8 +49,11 @@
         justify-content: space-around;
     }
     }
-@media (max-width: 1024){
-    .productArea{
-        padding: 0 15px;
-    }
+/*Mobile*/
+@media only screen and (max-width: 46.1875em) /*739px*/ {
+    
+}
+/*Tablet*/
+@media only screen and (min-width: 46.25em) /*740px*/ (max-width: 74.9375em) /*1200px*/ {
+
 }
