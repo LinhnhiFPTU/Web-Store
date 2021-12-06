@@ -16,3 +16,8 @@
         justify-content: space-around;
     }
     }
+@media (max-width: 1024){
+    .productArea{
+        padding: 0 15px;
+    }
+}
