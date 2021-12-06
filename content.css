@@ -109,6 +109,9 @@
     padding-left: 20px;
     padding-right: 23px;
 }
+.menu {
+    display: none;
+}
 .body-container {
     position: relative;
     width: 100%;
