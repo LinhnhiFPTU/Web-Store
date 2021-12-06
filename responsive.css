@@ -63,28 +63,34 @@
     padding-top: 9px;
 }
 @media (max-width: 1200px) {
+    body {
+        overflow-x: hidden;
+    }
     .header-container{
         display: none;
     }
     .header-container-mobile{
         display: block;
     }
-    .menu-bar{
-        display: none;
-    }
     .menu {
         display: block;
+        cursor: pointer;
     }
     .menu-bar {
         position: fixed;
         width: max-content;
         top: 0px;
         right: 0px;
+        width: 30%;
         height: 100%;
         z-index: 3;
         background-color: #4D4C4C;
         display: flex;
         align-items: right;
+        transform: translateX(100%);
+    }  
+    .shop-name {
+        text-align: center;
     }
     .product-name {
         display: flex;
