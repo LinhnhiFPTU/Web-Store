@@ -1,0 +1,18 @@
+@media (max-width: 1200px) {
+    .header-container{
+        display: none;
+    }
+    .header-container-mobile{
+        display: block;
+    }
+    .menu-bar{
+        display: none;
+    }
+    .productArea{
+        padding-left: 0;
+    }
+    .footer-container {
+        padding-left: 0;
+        justify-content: space-around;
+    }
+    }

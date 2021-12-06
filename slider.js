@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('.image-slider').slick({
-      infinite: true,
+      infinite: false,
       slidesToShow: 4,
       slidesToScroll: 2,
       autoplay: false,
@@ -9,7 +9,7 @@ $(document).ready(function(){
       nextArrow: `<button type='button' class='slick-next slick-arrow'><ion-icon name="chevron-forward-outline"></ion-icon></button>`,
       responsive: [
         {
-          breakpoint: 1025,
+          breakpoint: 1201,
           settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
