@@ -8,7 +8,7 @@
     position: relative;
     height: 100px;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;   
     box-sizing: border-box;
     width: 100%;
@@ -110,6 +110,14 @@
 .body-container {
     position: relative;
     width: 100%;
+}
+/*Mobile*/
+@media only screen and (max-width: 46.1875em) {
+    
+}
+/*Tablet*/
+@media only screen and (min-width: 46.25em) (max-width: 63.9375em) {
+
 }
   /*--------------------------Account infor---------------------*/
 .menu-bar {
