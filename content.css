@@ -14,20 +14,8 @@
     width: 100%;
     height: max-content;
     background: #E9E9E9;
-    box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     justify-content: space-between;
-}
-.header-container-mobile{
-    display: none;
-}
-.slogan-Mb{
-    font-family: 'Abril Fatface', cursive;
-    font-size: 30px;
-    line-height: 40px;
-    color: #000000;
-    text-align: center;
-    background: #E9E9E9;
 }
 .slogan {
     padding-left: 23px;
