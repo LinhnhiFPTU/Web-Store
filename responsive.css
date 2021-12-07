@@ -1,70 +1,38 @@
-.header-container-mobile{
-    display: none;
-}
-.slogan-Mb{
-    font-family: 'Abril Fatface', cursive;
-    font-size: 30px;
-    line-height: 40px;
-    color: #000000;
-    text-align: center;
-    background: #E9E9E9;
-}
-.shop-name-Mb{
-    text-align: center;
-    align-items: center;
-    font-family: 'Sansita Swashed', cursive;
-    font-size: 60px;
-    line-height: 64px;
-    color: #000000;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 15px 0;
-}
-.tool-bar{
-    display: flex;
-    flex-direction: row;
-    box-sizing: border-box;
-    height: max-content;
-    justify-content: space-around;
-}
-.search-Mb {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 60px;
-}
-.search-Mb input {
-    width: 406px;
-    height: 42px;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-}
-.search-input-Mb {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 23px;
-    line-height: 27px;
-    text-indent: 20px;
-    color: black;
-    text-align: left;
-}
-.search-input-Mb::placeholder {   
-    color: #767474;
-}
-.menu > .menu-icon{
-    width: 65px;
-    height: 60px;
-    align-items: center;   
-}
-.cart-Mb{
-    align-items: center;
-    padding-top: 9px;
-}
 @media (max-width: 1200px) {
     body {
         overflow-x: hidden;
+    }
+    #input-menu:checked ~ .overLayout{ 
+        display: block;
+    }
+    #input-menu:checked ~ .menu-bar{ 
+        transform: translateX(0%); 
+        opacity: 1;
+    }
+    .remove-icon{
+        width: 32px;
+        display: block;
+        position: absolute;
+        right: 0;
+        padding: 20px 20px;
+    }
+    .sign-up{
+        margin-top: 70px;
+    }
+    .items-icon1{
+        padding-left: 25px;
+        padding-right: 8px;
+    }
+    .items-text{
+        width: max-content;
+        font-size: 25px;
+    }
+    .link-page-Mb{
+        display: block;
+        text-decoration: none;
+    }
+    .link-page-Mb:hover{
+        color: blue;
     }
     .header-container{
         display: none;
@@ -80,17 +48,25 @@
         position: fixed;
         width: max-content;
         top: 0px;
-        right: 0px;
-        width: 30%;
+        left: 0px;
         height: 100%;
-        z-index: 3;
-        background-color: #4D4C4C;
+        z-index: 4;
+        background-color: #fff;
         display: flex;
-        align-items: right;
-        transform: translateX(100%);
+        opacity: 0;
+        transform: translateX(-100%); 
+        transition: transform linear 0.2s, opacity linear 0.2s ;
     }  
     .shop-name {
+        margin-top: 70px;
         text-align: center;
+        margin-right: 10px;
+    }
+    .cart-container{
+        padding-left: 15px;
+    }
+    .account-infor{
+        padding-left: 15px;
     }
     .product-name {
         display: flex;
