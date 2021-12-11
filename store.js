@@ -31,7 +31,7 @@ function handleProfile(userList) {
     var name = document.querySelector("#name");
     var phone = document.querySelector("#phone");
     var address = document.querySelector("#address");
-    var email = document.querySelector("#gmail");
+    var email = document.querySelector("#email");
     for (const user of userList) {
         if (user.id == localStorage.id){
             name.value = `${user.fullname}`;
@@ -45,7 +45,7 @@ function updataProfile(){
     var name = document.querySelector("#name").value;
     var phone = document.querySelector("#phone").value;
     var address = document.querySelector("#address").value;
-    var email = document.querySelector("#gmail").value;
+    var email = document.querySelector("#email").value;
     var data = {
         fullname: name,
         phonenumber: phone,
@@ -61,7 +61,7 @@ function updataProfile(){
     })
     .then(response=>{
         return response.json()
-    }).then(data=> 
-    console.log(data)
-    );
+    })
+    .then(data=> 
+        alert("Successfully updated!"))
 }   
