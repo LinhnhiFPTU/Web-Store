@@ -1,16 +1,28 @@
-var inputUsername = document.getElementById('user-name');
-var inputPassword = document.getElementById('password');
-
-var formLogin = document.getElementById('login');
-
-function onFormSubmit(e) {
-    var username = inputUsername.value;
-    var password = inputPassword.value;
-}
-
-if (formLogin.attachEvent) {
-    formLogin.attachEvent('submit', onFormSubmit);
-}
-else {
-    formLogin.addEventListener('submit', onFormSubmit)
+var usersAPI = "https://61b32a86af5ff70017ca1d02.mockapi.io/users";
+var userList = [];
+var err = document.querySelector(".err");
+fetch(usersAPI)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(user) {
+         userList = userList.concat(user);
+         handleLogInForm(userList);
+    });
+function handleLogInForm(userList) {
+    var logInBtn = document.querySelector(".login-button");
+    logInBtn.onclick = function() {
+        var userName = document.querySelector("#user-name").value;
+        var password = document.querySelector("#password").value;
+        for (const user of userList) {
+            if (user.username == userName && user.password == password){
+                localStorage.id = `${user.id}`;
+                window.location.assign("Store-page.html");
+            } 
+            else {
+                if(userName.length == 0 || password.length == 0) err.innerHTML = "Username and Password are required";
+                else err.innerHTML = "Username or Password is INCORRECT";
+            }
+        }
+    }
 }

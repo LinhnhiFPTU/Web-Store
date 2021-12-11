@@ -77,6 +77,10 @@ body{
 .text > a{
     color: #072AE5;
 }
+#notify {
+    color: red;
+    margin: 10px 0;
+}
 .inputArea > .SignIn{
     width: 450px;
     display: flex;

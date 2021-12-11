@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="image/icon-web-PhotoRoom.png" type="image/x-icon" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,17 +32,18 @@
                 </div>
             </div>       
             <div class="login-area">
-                <form id="login" action="" method="POST" role="form">
-                    <div class="login-form">
-                        <input class="login-input" type="text" id="user-name" placeholder="user name">
-                    </div>      
-                    <div class="login-form">
-                        <input class="login-input" type="text" id="password" placeholder="password">
-                    </div>    
-                    <div class="login-forgot">
-                        <a href="">Forgot your password ?</a>
-                    </div> 
-                </form>     
+                <div>
+                    <input class="login-input" type="text" id="user-name" placeholder="user name">
+                </div>      
+                <div>
+                    <input class="login-input" type="password" id="password" placeholder="password">
+                </div>    
+                <div class="login-forgot">
+                    <a href="">Forgot your password ?</a>
+                </div>  
+                <div class="errText">
+                    <span class="err"></span>
+                </div>       
             </div>
             <div class="login-button">
                 <button class="button-item">Login</button>           
@@ -50,5 +52,6 @@
                 <p class="sign-up-text">Don't have account? <span><a href="Resgister.html">Sign up now</a></span></p>
             </div>  
         </div>
+        <script src="app.js"></script>
     </body>
 </html>
