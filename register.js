@@ -1,28 +1,19 @@
 var usersApi = "https://61b32a86af5ff70017ca1d02.mockapi.io/users";
-var userList = [];
 
 function start() {
-  createForm();
+  getInfor();
+
   handleSignUpForm();
 }; 
 
-start();    
+start();   
 
-function createForm (data) {
-  function checkInput (users) {
-    userList = userList.concat(users);
-    handleSignUpForm(userList);
-  }
-  var options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'},
-    body: JSON.stringify(data)
-  }
-  fetch(usersApi, options)
-  .then(function(response) {
-      return response.json();
-  })
+function getInfor(callback) {
+  fetch(usersApi)
+      .then( function(response){
+          return response.json();
+      })
+      .then(callback);
 }
 
 function handleSignUpForm(inforList) {
@@ -36,6 +27,17 @@ function handleSignUpForm(inforList) {
       var notify = document.getElementById("notify");
       var email = "";
       var address = "";
+      var formData = {
+        name: fullName,
+        username: username,
+        password: password,
+        confirmPassword: confirmPassword,
+        phoneNumber: phoneNumber,
+        email: email,
+        address: address,
+      };
+      createForm(formData);
+
       if (!fullName || !username || !password || !confirmPassword || !phoneNumber) {
         notify.innerHTML = "Please do not leave these fields blank!";
         return;
@@ -45,9 +47,22 @@ function handleSignUpForm(inforList) {
       }
       else {
         alert('Register Successfully');
-        window.location.assign("login.html");  
+        //window.location.assign("login.html");  
       }
      
     }
-  }      
+  }     
+  function createForm (data, callback) {
+    var options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }
+    fetch(usersApi, options)
+          .then(function(response) {
+              response.json();
+          })
+          .then(callback);
+  }
 
