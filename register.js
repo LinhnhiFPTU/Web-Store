@@ -2,12 +2,17 @@ var usersApi = "https://61b32a86af5ff70017ca1d02.mockapi.io/users";
 var userList = [];
 
 function start() {
+  createForm();
   handleSignUpForm();
 }; 
 
 start();    
 
 function createForm (data) {
+  function checkInput (users) {
+    userList = userList.concat(users);
+    handleSignUpForm(userList);
+  }
   var options = {
     method: 'POST',
     headers: {
@@ -18,10 +23,6 @@ function createForm (data) {
   .then(function(response) {
       return response.json();
   })
-  .then(function(users) {
-       userList = userList.concat(users);
-       handleSignUpForm(userList);
-  });
 }
 
 function handleSignUpForm(inforList) {
@@ -46,7 +47,7 @@ function handleSignUpForm(inforList) {
         alert('Register Successfully');
         window.location.assign("login.html");  
       }
-      
+     
     }
   }      
 
