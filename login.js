@@ -1,12 +1,10 @@
 var usersAPI = "https://61b32a86af5ff70017ca1d02.mockapi.io/users";
-var userList = [];
 var err = document.querySelector(".err");
 fetch(usersAPI)
     .then(function(response) {
         return response.json();
     })
-    .then(function(user) {
-         userList = userList.concat(user);
+    .then(function(userList) {
          handleLogInForm(userList);
     });
 function handleLogInForm(userList) {
@@ -18,11 +16,10 @@ function handleLogInForm(userList) {
             if (user.username == userName && user.password == password){
                 localStorage.id = `${user.id}`;
                 window.location.assign("Store-page.html");
+                return;
             } 
-            else {
-                if(userName.length == 0 || password.length == 0) err.innerHTML = "Username and Password are required";
-                else err.innerHTML = "Username or Password is INCORRECT";
-            }
         }
+        if(userName.length == 0 || password.length == 0) {err.innerHTML = "Username and Password are required";}
+        else {err.innerHTML = "Username or Password is INCORRECT";}
     }
 }

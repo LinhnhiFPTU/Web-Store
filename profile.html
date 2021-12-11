@@ -22,21 +22,21 @@
                     <img src="image/Icon-Search.png">
                 </div>
                 <div>
-                    <a class="link-page" href="Register.html">
-                        <diV  class="sign-up">
-                            <img class="items-icon1" src="image/Icon-Sign up.png">
-                            <h6 class="items-text">Sign up</h6>
-                        </diV>                       
-                    </a>                    
-                </div>
-                <div>
-                    <a  class="link-page" href="login.html">
+                    <a  class="link-page" id="infor" href="profile.html">
                         <div class="sign-in">
                             <img class="items-icon2" src="image/Icon-Sign in.png">
-                            <h6 class="items-text">Sign in</h6>
+                            <h6 class="items-text">Infor</h6>
                         </div>                        
                     </a>  
-                </div>      
+                </div> 
+                <div>
+                    <a class="link-page" id="logOut" href="">
+                        <diV  class="sign-up">
+                            <img class="items-icon1" src="image/log-out-icon.png">
+                            <h6 class="items-text">Log out</h6>
+                        </diV>                       
+                    </a>                    
+                </div>     
                 <div class="cart">
                     <a href="cart.html"><img class="cart-icon" src="image/Icon-cart.png"></a>                   
                 </div>
@@ -77,17 +77,17 @@
                     <div><a class="product-item" href="">Cardigan</a></div>                   
                     <div><a class="product-item" href="">Shoes</a></div>                   
                     <div><a class="product-item" href="">Bagback</a></div> 
-                    <a class="link-page-Mb" href="Register.html">
-                        <diV  class="sign-up">
-                            <img class="items-icon1" src="image/Icon-Sign up.png">
-                            <h6 class="items-text">Sign up</h6>
-                        </diV>                       
-                    </a>                    
-                    <a  class="link-page-Mb" href="login.html">
+                    <a  class="link-page-Mb" id="infor" href="profile.html">
                         <div class="sign-in">
                             <img class="items-icon2" src="image/Icon-Sign in.png">
-                            <h6 class="items-text">Sign in</h6>
+                            <h6 class="items-text">Infor</h6>
                         </div>                        
+                    </a>
+                    <a class="link-page-Mb" id="logOut" href="">
+                        <diV  class="sign-up">
+                            <img class="items-icon1" src="image/log-out-icon.png">
+                            <h6 class="items-text">Log out</h6>
+                        </diV>                       
                     </a>   
                 </div>
             </div>
@@ -105,15 +105,15 @@
                     <div class="edit">
                         <div class="edit-profile">Edit profile</div>
                         <div class="edit-type">
-                            <input class="edit-input" type="text" placeholder="Name"> 
+                            <input class="edit-input" onchange="activeBtn()" id="name" type="text" placeholder="Name"> 
                             <br>
-                            <input class="edit-input" type="text" placeholder="Address">
+                            <input class="edit-input" onchange="activeBtn()" id="address" type="text" placeholder="Address">
                             <br>
-                            <input class="edit-input" type="text" placeholder="Phone number">
+                            <input class="edit-input" onchange="activeBtn()" id="phone" type="text" placeholder="Phone number">
                             <br>
-                            <input class="edit-input" type="text" placeholder="Gmail">
+                            <input class="edit-input" onchange="activeBtn()" id="email" type="text" placeholder="Gmail">
                             <br>
-                            <button class="save">Save changes</button>
+                            <button class="save" onclick="updataProfile()">Save changes</button>
                         </div>
                     </div>
                 </div>
@@ -132,5 +132,6 @@
                 </div>
             </div>
         </div>
+        <script src="store.js"></script>
     </body>
 </html>
