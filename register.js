@@ -47,7 +47,7 @@ function handleSignUpForm(inforList) {
       }
       else {
         alert('Register Successfully');
-        //window.location.assign("login.html");  
+        window.location.assign("login.html");  
       }
      
     }
