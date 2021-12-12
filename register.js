@@ -2,10 +2,8 @@ var usersApi = "https://61b32a86af5ff70017ca1d02.mockapi.io/users";
 
 function start() {
   getInfor();
-
   handleSignUpForm();
 }; 
-
 start();   
 
 function getInfor(callback) {

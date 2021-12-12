@@ -16,7 +16,7 @@
         right: 0;
         padding: 20px 20px;
     }
-    .sign-up{
+    .sign-in{
         margin-top: 70px;
     }
     .items-icon1{
@@ -83,5 +83,32 @@
     }
 /*Mobile*/
 @media only screen and (max-width: 46.25em) /*739px*/ {
-    
+    .search-Mb input{
+        width: 141px;
+        height: 31px;
+        font-size: 18px;
+    }
+    .image img{
+        width: 180px;
+        height: 195px;
+        object-fit: cover;
+    }
+    .contact img{
+        width: 26px;
+        height: 26px;
+    }
+    .footer-container{
+        font-size: 12px;
+    }
+    .footer{
+        font-size: 15px;
+    }
+    .image-item > .details{
+        font-size: 15px;
+        width: 180px;
+    }
+    .image-item > .price{
+        width: 180px;
+        font-size: 15px;
+    }
 }
