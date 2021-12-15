@@ -440,9 +440,6 @@
     display: flex;
     align-items: center;
 } 
-.image-item:hover {
-    transform: scale(1.07, 1.07);
-}
 .image{
     width: max-content;
     height: max-content;
