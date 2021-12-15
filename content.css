@@ -495,14 +495,14 @@
     position: absolute;
     background-color: rgba(0, 0, 0, 0.616);
     transition: all 0.2s ease-in-out;
-    opacity: 0;
+    display: none;
     cursor: pointer;
     text-align: center;
 }
 .image-item:hover .add{
     width: 235px;
     bottom: 70px;
-    opacity: 1;
+    display: block;
     text-decoration: none;
     color: white;
     font-size: 15px;
