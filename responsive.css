@@ -112,3 +112,52 @@
         font-size: 15px;
     }
 }
+@media only screen and (max-width:  22.8125em) /*365px*/ {
+    .cart-icon {
+        width: 30px;
+        height: 28px;
+        padding-left: 0px;
+        padding-right: 5px;
+        padding-top: 0;
+    }
+    .search-Mb {
+        height: 40px;
+    }
+    .menu > .menu-icon {
+        width: 45px;
+        height: 40px;
+    }
+    .search-Mb input {
+        width: 130px;
+        height: 27px;
+        font-size: 12px;
+    }
+    .shop-name-Mb {
+        font-size: 50px;
+    }
+    .slogan-Mb {
+        font-size: 20px;
+    }
+    .search-icon-Mb {
+        width: 40px;
+        height: 26px;
+    }
+    .image img{
+        width: 160px;
+        height: 160px;
+    }
+    .image-item > .details{
+        font-size: 12px;
+        width: 160px;
+    }
+    .image-item > .price{
+        width: 160px;
+        font-size: 10px;
+    }
+    .footer-container{
+        font-size: 9px;
+    }
+    .footer{
+        font-size: 12px;
+    }
+}
