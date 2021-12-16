@@ -68,55 +68,15 @@ function updataProfile(){
 }   
 
 /*--------------------Add to cart-------------------------*/
-/*var productsApi = 'https://61b32a86af5ff70017ca1d02.mockapi.io/products'
-
-fetch(productsApi)
-    .then(response =>
-        response.json()
-    )
-    .then(data => console.log(data)) 
-
-const myJson = response.json(); 
-products = myJson; */
-
-const carts = document.querySelectorAll('.image-item .add');
+const carts = document.querySelectorAll('.image-item');
 console.log(carts)
-carts.forEach(function(button, index) {
-    button.addEventListener('click', function(event) {
+carts.forEach(function(getItem, index) {
+    getItem.addEventListener('click', function(event) {
         var btnItem = event.target;
         var product = btnItem.parentElement;
-        var productImg = document.querySelector('.image').srcc
-        var productName = document.querySelector('.details')
-        console.log(productImg)  
+        var productImg = product.querySelector('img').src
+        var productName = product.querySelector('.details').innerText
+        var productPrice = product.querySelector('.price').innerText
+        addCart(productImg, productName, productPrice)
 })
 })
-/*
-for (i=0; i< carts.length; i++) {
-    carts[i].addEventListener('click', function(event) {
-        var btnItem = event.target;
-        var product = btnItem.parentElement;
-        var productImg = document.querySelector('.image')
-        var productName = document.querySelector('.details')
-        console.log(productName)
-    })
-} */
-
-
-/*
-
-function cartNumbers(product) {
-    console.log('the product clicked is', product)
-    let productNumbers = localStorage.getItem('cartNumbers');
-    productNumbers = parseInt(productNumbers);
-    if(productNumbers) {
-        localStorage.setItem('cartNumbers', productNumbers + 1);
-    }
-    else {
-        localStorage.setItem('cartNumbers', 1);
-    }
-    
-} */
-
-
-/*var userName = document.querySelector("#user-name").value;
-var password = document.querySelector("#password").value;*/
