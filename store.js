@@ -86,15 +86,23 @@ function changePass() {
         }
     });
 }
-/*------------Add to cart -------*/   
-const carts = document.querySelectorAll('.image-item .add');
+/*--------------------Add to cart-------------------------*/
+const carts = document.querySelectorAll('.image-item');
 console.log(carts)
-carts.forEach(function(button, index) {
-    button.addEventListener('click', function(event) {
+carts.forEach(function(getItem, index) {
+    getItem.addEventListener('click', function(event) {
         var btnItem = event.target;
         var product = btnItem.parentElement;
-        var productImg = document.querySelector('.image').src
-        var productName = document.querySelector('.details')
-        console.log(productImg)  
+        var productImg = product.querySelector('img').src
+        var productName = product.querySelector('.details').innerText
+        var productPrice = product.querySelector('.price').innerText
+        addCart(productImg, productName, productPrice)
 })
 })
+
+function addCart(productImg, productName, productPrice) {
+    var addtr = document.createElement("tr")
+    var trContent = productImg
+    var cartTable = document.querySelector('tbody')
+    console.log(cartTable)
+}
