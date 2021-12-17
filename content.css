@@ -272,6 +272,7 @@
     padding-left: 41px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .infor img {
     width: 150px;
@@ -279,6 +280,7 @@
 }
 .infor-header {
     margin-top: 38px;
+    width: max-content;
 }
 .infor-header a {
     text-decoration: none;
@@ -289,8 +291,9 @@
     color: #000000;
 }
 .edit {
+    display: none;
     width: 75%;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
     font-style: normal;
@@ -325,6 +328,36 @@
     font-size: 35px;
     line-height: 44px;   
     color: #FFFFFF;  
+}
+.change-pass {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 45px;
+    line-height: 57px;
+    color: #000000;
+}
+.changePassBtn {
+    margin-top: 27px;
+    background: #20911E;
+    width: 500px;
+    height: 65px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 44px;   
+    color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%)
+}
+.errNote {
+    height: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: red;
 }
  /*------------------------------Footer---------------------*/
 .footer-container {

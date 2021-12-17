@@ -1,21 +1,20 @@
 /*--------------------User-------------------------*/
 var usersAPI = "https://61b32a86af5ff70017ca1d02.mockapi.io/users";
 var logOut = document.querySelector("#logOut");
-var saveBtn = document.querySelector(".save");
 fetch(usersAPI)
     .then(function(response) {
         return response.json();
     })
-    .then(function(productList) {
-        handleStore(productList);
+    .then(function(userList) {
+        handleStore(userList);
     });
-function handleStore(productList) {
+function handleStore(userList) {
     checkLogin();
     logOut.onclick = function() {
         delete localStorage.id;
         window.location.assign("login.html");
     };
-    handleProfile(productList);
+    handleProfile(userList);
 }
 function checkLogin() {
   if (!window.localStorage.id) {
@@ -26,14 +25,16 @@ function activeBtn() {
     document.querySelector(".save").disabled = false;
     document.querySelector(".save").style.background = 'rgba(32, 145, 30, 1)';
 };
-function handleProfile(productList) {
+function handleProfile(userList) {
     document.querySelector(".save").disabled = true;
     document.querySelector(".save").style.background = 'rgba(32, 145, 30, 0.5)';
+    // document.querySelector(".changePassBtn").disabled = true;
+    // document.querySelector(".changePassBtn").style.background = 'rgba(32, 145, 30, 0.5)';
     var name = document.querySelector("#name");
     var phone = document.querySelector("#phone");
     var address = document.querySelector("#address");
     var email = document.querySelector("#email");
-    for (const user of productList) {
+    for (const user of userList) {
         if (user.id == localStorage.id){
             name.value = `${user.fullname}`;
             phone.value = `${user.phonenumber}`;
@@ -65,58 +66,35 @@ function updataProfile(){
     })
     .then(data=> 
         alert("Successfully updated!"))
-}   
-
-/*--------------------Add to cart-------------------------*/
-/*var productsApi = 'https://61b32a86af5ff70017ca1d02.mockapi.io/products'
-
-fetch(productsApi)
-    .then(response =>
-        response.json()
-    )
-    .then(data => console.log(data)) 
-
-const myJson = response.json(); 
-products = myJson; */
-
+}
+function changePass() {
+    var nowPass = document.querySelector("#pass-now").value;
+    var newPass = document.querySelector("#pass-new").value;
+    var confirmNewPass = document.querySelector("#confirm").value;
+    var err = document.querySelector(".errNote");
+    fetch(usersAPI)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(userList) {
+        for (const user of userList) {
+            if (user.id == localStorage.id){
+                if(user.password != nowPass)  err.innerHTML = "Your old password is INCORRECT";
+                else if (user.password == newPass) err.innerHTML = "New password cannot like old password";
+                else if (newPass != confirmNewPass) err.innerHTML = "Confirm password is INCORRECT";
+            }
+        }
+    });
+}
+/*------------Add to cart -------*/   
 const carts = document.querySelectorAll('.image-item .add');
 console.log(carts)
 carts.forEach(function(button, index) {
     button.addEventListener('click', function(event) {
         var btnItem = event.target;
         var product = btnItem.parentElement;
-        var productImg = document.querySelector('.image').srcc
+        var productImg = document.querySelector('.image').src
         var productName = document.querySelector('.details')
         console.log(productImg)  
 })
 })
-/*
-for (i=0; i< carts.length; i++) {
-    carts[i].addEventListener('click', function(event) {
-        var btnItem = event.target;
-        var product = btnItem.parentElement;
-        var productImg = document.querySelector('.image')
-        var productName = document.querySelector('.details')
-        console.log(productName)
-    })
-} */
-
-
-/*
-
-function cartNumbers(product) {
-    console.log('the product clicked is', product)
-    let productNumbers = localStorage.getItem('cartNumbers');
-    productNumbers = parseInt(productNumbers);
-    if(productNumbers) {
-        localStorage.setItem('cartNumbers', productNumbers + 1);
-    }
-    else {
-        localStorage.setItem('cartNumbers', 1);
-    }
-    
-} */
-
-
-/*var userName = document.querySelector("#user-name").value;
-var password = document.querySelector("#password").value;*/

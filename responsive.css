@@ -1,4 +1,4 @@
-@media (max-width: 1200px) {
+@media (max-width: 75em) {
     body {
         overflow-x: hidden;
     }
@@ -111,6 +111,72 @@
         width: 180px;
         font-size: 15px;
     }
+    .account-header {
+        text-align: center;
+    }
+    .account-infor {
+        padding-left: 0;
+    }
+    .divider-bar {
+        width: 100%;
+    }
+    .infor-container {
+        text-align: center;
+    }
+    .infor {
+        padding-left: 0px;
+        margin-bottom: 50px;
+    }
+    .infor img {
+        margin-bottom: 20px;
+    }
+    .infor-header {
+        margin-top: 12px;
+    }
+    .infor-container {
+        align-items: center;
+        flex-direction: column;
+    }
+    .edit-input {
+        width: 400px;
+        height: 40px;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+    .save {
+        font-size: 25px;
+        border-radius: 12px;
+        line-height: 40px;
+        width: 400px;
+        height: 55px;
+    }
+}
+@media (max-width: 25em)/*400px*/ {
+    .edit-input {
+        width: 300px;
+        font-size: 14px;
+        height: 38px;
+    }
+    .save {
+        font-size: 20px;
+        border-radius: 12px;
+        line-height: 40px;
+        width: 300px;
+        height: 50px;
+    }
+    .account-header {
+        font-size: 25px;
+    }
+    .infor-header a {
+        font-size: 20px;
+    }
+    .edit-profile {
+        font-size: 40px;
+    }
+    .infor img {
+        width: 120px;
+        height: 120px;
+    }
 }
 @media only screen and (max-width:  22.8125em) /*365px*/ {
     .cart-icon {
@@ -132,8 +198,8 @@
         height: 27px;
         font-size: 12px;
     }
-    .shop-name-Mb {
-        font-size: 50px;
+    .shop-name-Mb p {
+        font-size: 45px;
     }
     .slogan-Mb {
         font-size: 20px;
@@ -161,3 +227,31 @@
         font-size: 12px;
     }
 }
+@media (max-width: 18.75em)/*300px*/ {
+    .edit-input {
+        width: 225px;
+        font-size: 12px;
+        height: 30px;
+        margin-top: 0;
+    }
+    .save {
+        font-size: 16px;
+        border-radius: 12px;
+        line-height: 30px;
+        width: 225px;
+        height: 40px;
+    }
+    .account-header {
+        font-size: 20px;
+    }
+    .infor-header {
+        margin-top: 0;
+    }
+    .infor-header a {
+        font-size: 16px;
+    }
+    .edit-profile {
+        font-size: 35px;
+    }
+}
+
