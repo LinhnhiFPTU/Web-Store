@@ -80,3 +80,10 @@ carts.forEach(function(getItem, index) {
         addCart(productImg, productName, productPrice)
 })
 })
+
+function addCart(productImg, productName, productPrice) {
+    var addtr = document.createElement("tr")
+    var trContent = productImg
+    var cartTable = document.querySelector('tbody')
+    console.log(cartTable)
+}
