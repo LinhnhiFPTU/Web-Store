@@ -431,6 +431,7 @@
     bottom: 30px;
     z-index: 4; 
     display: none;
+    overflow-y: scroll;
 }
 .cart-items table {
     width: 100%;

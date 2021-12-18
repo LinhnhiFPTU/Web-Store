@@ -1,28 +1,3 @@
-/*--------------------User-------------------------*/
-var usersAPI = "https://61b32a86af5ff70017ca1d02.mockapi.io/users";
-var logOut = document.querySelector("#logOut");
-var saveBtn = document.querySelector(".save");
-fetch(usersAPI)
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(productList) {
-        handleStore(productList);
-    });
-function handleStore(productList) {
-    checkLogin();
-    logOut.onclick = function() {
-        delete localStorage.id;
-        window.location.assign("login.html");
-    };
-    handleProfile(productList);
-}
-function checkLogin() {
-    if (!window.localStorage.id) {
-      window.location.assign("login.html");
-    }
-  };
-/*--------------------Add to cart-------------------------*/
 const carts = document.querySelectorAll('.image-item');
 function addCart(productImg, productName, productPrice) {
     var addtr = document.createElement("tr")
@@ -61,12 +36,10 @@ function addCart(productImg, productName, productPrice) {
             <input type="number" min="1" value="1">                             
         </td>
         <td class="select-delete"><img class="delete-icon" src="image/delete-icon.png"></td>
-        
     </tr>
     `
     var cartTable = document.querySelector('tbody')
     cartTable.append(addtr)
-
     cartTotal()
     deleteCart()
 }
