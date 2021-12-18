@@ -416,19 +416,11 @@
     width: 235px;
     height: 245px;
 }
-.select-button {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-}
-.minus, .plus {
-    cursor: pointer;
-}
-.select-button span {
+
+.select-button input{
+    width: 40px;
     font-size: 21px;
+    text-align: center;
 }
 .cart-items table{
     border-bottom: 1px solid black;  
