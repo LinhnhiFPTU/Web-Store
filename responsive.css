@@ -137,13 +137,16 @@
         align-items: center;
         flex-direction: column;
     }
+    .edit-password {
+        font-size: 35px;
+    }
     .edit-input {
         width: 400px;
         height: 40px;
         font-size: 16px;
         border-radius: 12px;
     }
-    .save {
+    .save, .changePassBtn {
         font-size: 25px;
         border-radius: 12px;
         line-height: 40px;
@@ -157,7 +160,7 @@
         font-size: 14px;
         height: 38px;
     }
-    .save {
+    .save, .changePassBtn {
         font-size: 20px;
         border-radius: 12px;
         line-height: 40px;
@@ -167,11 +170,14 @@
     .account-header {
         font-size: 25px;
     }
-    .infor-header a {
+    .infor-header {
         font-size: 20px;
     }
     .edit-profile {
         font-size: 40px;
+    }
+    .edit-password {
+        font-size: 20px;
     }
     .infor img {
         width: 120px;
@@ -234,7 +240,7 @@
         height: 30px;
         margin-top: 0;
     }
-    .save {
+    .save, .changePassBtn {
         font-size: 16px;
         border-radius: 12px;
         line-height: 30px;
@@ -246,12 +252,13 @@
     }
     .infor-header {
         margin-top: 0;
-    }
-    .infor-header a {
         font-size: 16px;
     }
     .edit-profile {
-        font-size: 35px;
+        font-size: 20px;
+    }
+    .edit-password {
+        font-size: 18px;
     }
 }
 

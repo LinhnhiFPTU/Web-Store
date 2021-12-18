@@ -281,8 +281,7 @@
 .infor-header {
     margin-top: 38px;
     width: max-content;
-}
-.infor-header a {
+    cursor: pointer;
     text-decoration: none;
     font-style: normal;
     font-weight: bold;
@@ -291,9 +290,8 @@
     color: #000000;
 }
 .edit {
-    display: none;
     width: 75%;
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
     align-items: center;
     font-style: normal;
@@ -331,7 +329,7 @@
 }
 .change-pass {
     width: 75%;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     font-style: normal;

@@ -99,8 +99,8 @@
                 <div class="infor-container">
                     <div class="infor">
                         <img src="image/Profile-image.png">
-                        <div class="infor-header"><a href="">Your profile</a></div>
-                        <div class="infor-header"><a href="">Change password</a></div>
+                        <div id="updateProfile" class="infor-header">Your profile</div>
+                        <div id="changePassword" class="infor-header">Change password</div>
                     </div>
                     <div class="edit">
                         <div class="edit-profile">Edit profile</div>
@@ -113,11 +113,11 @@
                             <br>
                             <input class="edit-input" onchange="activeBtn()" id="email" type="text" placeholder="Gmail">
                             <br>
-                            <button class="save" onclick="updataProfile()">Save changes</button>
+                            <button class="save" onclick="updateProfile()">Save changes</button>
                         </div>
                     </div>
                     <div class="change-pass">
-                        <div class="edit-profile">Change password</div>
+                        <div class="edit-password">Change password</div>
                         <div class="edit-type">
                             <input class="edit-input" id="pass-now" type="text" placeholder="password now"> 
                             <br>
