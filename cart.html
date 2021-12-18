@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="responsive.css">
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Roboto&family=Sansita+Swashed:wght@800;900&family=Sansita:ital@1&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">   
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Roboto&family=Sansita+Swashed:wght@800;900&family=Sansita:ital@1&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="header-container">
@@ -38,7 +38,7 @@
                     </a>                    
                 </div>     
                 <div class="cart">
-                    <a><img class="cart-icon" src="image/Icon-cart.png"></a>                   
+                    <a href="cart.html"><img class="cart-icon" src="image/Icon-cart.png"></a>                   
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                 </label>
                 <div class="search-Mb">
                     <input class="search-input-Mb" type="text" placeholder="search">
-                    <img src="image/Icon-Search.png">
+                    <img class="search-icon-Mb" src="image/Icon-Search.png">
                 </div>
                 <div class="cart-Mb">
                     <a href="cart.html"><img class="cart-icon" src="image/Icon-cart.png"></a>                   
@@ -91,42 +91,64 @@
                     </a>   
                 </div>
             </div>
-            <div class="account-infor">
-                <div class="account-header">
-                    ACCOUNT INFOR
-                    <div class="divider-bar"></div>
-                </div>
-                <div class="infor-container">
-                    <div class="infor">
-                        <img src="image/Profile-image.png">
-                        <div id="updateProfile" class="infor-header">Your profile</div>
-                        <div id="changePassword" class="infor-header">Change password</div>
-                    </div>
-                    <div class="edit">
-                        <div class="edit-profile">Edit profile</div>
-                        <div class="edit-type">
-                            <input class="edit-input" onchange="activeBtn()" id="name" type="text" placeholder="Name"> 
-                            <br>
-                            <input class="edit-input" onchange="activeBtn()" id="address" type="text" placeholder="Address">
-                            <br>
-                            <input class="edit-input" onchange="activeBtn()" id="phone" type="text" placeholder="Phone number">
-                            <br>
-                            <input class="edit-input" onchange="activeBtn()" id="email" type="text" placeholder="Gmail">
-                            <br>
-                            <button class="save" onclick="updateProfile()">Save changes</button>
-                        </div>
-                    </div>
-                    <div class="change-pass">
-                        <div class="edit-password">Change password</div>
-                        <div class="edit-type">
-                            <input class="edit-input" id="pass-now" type="text" placeholder="password now"> 
-                            <br>
-                            <input class="edit-input" id="pass-new" type="text" placeholder="new password">
-                            <br>
-                            <input class="edit-input" id="confirm" type="text" placeholder="confirm new password">
-                            <div class="errNote"></div> 
-                            <button class="changePassBtn" onclick="changePass()">Change password</button>
-                        </div>
+            <div class="cart-container">
+                <div class="cart">
+                    <div class="cart-header">
+                        <p>YOUR CART</p>
+                    </div>                   
+                    <div class="cart-items">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Infor of item</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Delete</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>  
+<<<<<<< HEAD
+                            <tbody class="subbody">
+=======
+                            <tbody class="createElement">
+>>>>>>> 0613a784950fd806c6583c72f7ab5c8f9f0839cc
+                                <tr>
+                                    <td class="select-image"><img src="image/smiley-wash-tee-1.jpg"></td>
+                                    <td class="select-infor">
+                                        <p>SMILEY SWASH TEE</p>
+                                        <p>Size S</p> 
+                                    </td>
+                                    <td class="select-price"><p>390.000VND</p></td>
+                                    <td>
+                                        <div class="select-button">
+                                            <img id="minus" src="image/minus-icon.png">
+                                            <span id="quantity">0</span>
+                                            <img id="plus" src="image/plus-icon.png">
+                                        </div>                              
+                                    </td>
+                                    <td class="select-delete"><a href=""><img class="delete-icon" src="image/delete-icon.png"></a></td>
+                                    <td class="select-total"><p>390.000VND</p></td>
+                                </tr>
+                                <tr>
+                                    <td class="select-image"><img src="image/Handsigns-Tee.jpg"></td>
+                                    <td class="select-infor">
+                                        <p>SMILEY SWASH TEE</p>
+                                        <p>Size S</p> 
+                                    </td>
+                                    <td class="select-price"><p>390.000VND</p></td>
+                                    <td>
+                                        <div class="select-button">
+                                            <img id="minus" src="image/minus-icon.png">
+                                            <span id="quantity">0</span>
+                                            <img id="plus" src="image/plus-icon.png">
+                                        </div>                              
+                                    </td>
+                                    <td class="select-delete"><a href=""><img class="delete-icon" src="image/delete-icon.png"></a></td>
+                                    <td class="select-total"><p>390.000VND</p></td>
+                                </tr>
+                            </tbody>                                                     
+                        </table>
                     </div>
                 </div>
             </div>
@@ -144,6 +166,7 @@
                 </div>
             </div>
         </div>
-        <script src="profile.js"></script>
+        <script src="cart.js"></script>
+        <script src="store.js"></script>
     </body>
 </html>

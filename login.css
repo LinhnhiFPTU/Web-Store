@@ -10,35 +10,32 @@ body {
 }
 
 .login-container {
-    position: relative;
     width: 525px;
-    height: 720px;
-    margin: 162px auto;
+    height: max-content;
+    margin: 100px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color:rgba(0, 0, 0, 0.7);
 }
 .login-heading {
-    position: relative;
-    top: 66px;
-    bottom: 73px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 93px;
     line-height: 109px;
     color: #FFFFFF;
-    margin-bottom: 73px;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
 }
 .button-social {
     display: flex;
     flex-direction: row;
-    margin-top: 36px;
-    margin-bottom: 21px;
+    margin-bottom: 30px;
 }
 .social1, .social2 {
-    position: relative;
     align-items: center;
 }
 .social1 {
@@ -72,7 +69,6 @@ body {
 }
 
 .choice-icon {
-    position: relative; 
     width: 50px;
     height: 50px;
     background: #FFFFFF;
@@ -83,7 +79,6 @@ body {
 }
 .choice-text {
     padding: 14px 11px;
-    position: relative;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 300;
@@ -92,9 +87,12 @@ body {
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.login-area {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
 .login-input {
-    position: relative;
-    top: 38px;
     width: 415px;
     height: 44px;
     font-family: 'Roboto', sans-serif;
@@ -122,8 +120,6 @@ body {
     margin-left: 15px;
 }
 .login-forgot a {
-    position: relative;
-    top: 35px;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -134,17 +130,12 @@ body {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .errText {
-    position: relative;
-    top: 40px;
     height: 18px;
-    margin-top: 16px;
-    margin-left: 15px;
+    margin: 16px auto;
     text-align: center;
     color: red;
 }
 .button-item {
-    position: relative;
-    top: 69px;
     width: 450px;
     height: 55px;
     background: #FB0716;
@@ -155,11 +146,8 @@ body {
     font-weight: 500;
     font-size: 35px;
     line-height: 41px;
+    margin-bottom: 25px;
     color: #FFFFFF;
-}
-.sign-up {
-    position: relative;
-    top: 100px;
 }
 .sign-up-text {
     font-family: 'Roboto', sans-serif;
@@ -169,6 +157,7 @@ body {
     line-height: 18px;
     color: #FFFFFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 50px;
 }
 .sign-up-text a {
     font-family: 'Roboto', sans-serif;

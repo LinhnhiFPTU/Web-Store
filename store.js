@@ -69,6 +69,13 @@ function updataProfile(){
 
 /*--------------------Add to cart-------------------------*/
 const carts = document.querySelectorAll('.image-item');
+function addCart(productImg, productName, productPrice) {
+    var addtr = document.createElement("tr")
+    // console.log(addtr)
+    var trContent = productImg
+    var cartTable = document.querySelector(".subbody")
+    console.log(cartTable)
+}
 carts.forEach(function(getItem, index) {
     getItem.addEventListener('click', function(event) {
         var btnItem = event.target;
@@ -79,7 +86,6 @@ carts.forEach(function(getItem, index) {
         addCart(productImg, productName, productPrice) 
 })
 })
-
 function addCart(productImg, productName, productPrice) {
     var addtr = document.createElement("tr")
     var cartItem = document.querySelectorAll('tbody tr')
@@ -95,7 +101,7 @@ function addCart(productImg, productName, productPrice) {
         <td class="select-infor">
             <p class="product-title">${productName}</p>
         </td>
-        <td class="select-price"><p class="price"><span>${productPrice}</span><sup>đ</sup></p></td>
+        <td class="select-price"><p class="price"><span>${productPrice}</span> VND</p></td>
         <td class="select-button">
             <input type="number" min="1" value="1">                             
         </td>
@@ -146,4 +152,3 @@ function deleteCart() {
         })
     }
 }
-
