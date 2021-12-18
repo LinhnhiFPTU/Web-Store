@@ -431,6 +431,14 @@
     border: none;
     width: 30px;
 }
+.price-total {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 30px;
+    text-align: right;
+    padding-right: 50px;
+}
 /*---------------------------Store page---------------*/
 .productArea{
     padding-left: 370px;
