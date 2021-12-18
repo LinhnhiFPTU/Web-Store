@@ -153,6 +153,63 @@
         width: 400px;
         height: 55px;
     }
+    
+    .login-container {
+        width: 100%;
+        margin: 0;
+    }
+    .button-social {
+        flex-direction: column;
+    }
+    .social1 {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+    .social-item {
+        width: 380px;
+        border-radius: 12px;
+    }
+    #user-name, #password {
+        width: 380px;
+    }
+    .button-item {
+        width: 380px;
+    }
+    .subBackgr {
+        margin: 0;
+        width: 100%;
+        height: max-content;
+    }
+    .inputType {
+        width: 360px;
+    }
+    .signUpBtn {
+        width: 360px;
+    }
+    .subBackgr > .inputArea {
+        width: 100%;
+        margin: 0;
+    }
+    .inputArea > .text {
+        display: block;
+        text-align: center;
+        width: 360px;
+    }
+    .inputArea > .SignIn {
+        flex-direction: column;
+        height: max-content;
+        width: 360px;
+    }
+    .SignIn > .signInWith {
+        height: 44px;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 37.5em) {
+    .image-item:hover .add {
+        width: 180px;
+    }
 }
 @media (max-width: 25em)/*400px*/ {
     .edit-input {
@@ -182,6 +239,52 @@
     .infor img {
         width: 120px;
         height: 120px;
+    }
+    .login-heading {
+        font-size: 75px;
+    }
+    .social-item {
+        width: 300px;
+    }
+    #user-name, #password {
+        width: 300px;
+        height: 40px;
+    }
+    .button-item {
+        width: 300px;
+        font-size: 25px;
+        height: 50px;
+    }
+    .choice-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .choice-text {
+        font-size: 16px;
+        padding: 9px 11px;
+    }
+    .subBackgr > h1 {
+        font-size: 60px;
+    }
+    .inputType {
+        font-size: 18px;
+        width: 280px;
+        height: 40px;
+    }
+    .signUpBtn {
+        font-size: 22px;
+        width: 280px;
+        height: 54px;
+    }
+    .inputArea > .text {
+        width: 280px;
+    }
+    .inputArea > .SignIn {
+        width: 280px;
+    }
+    .SignIn > .signInWith {
+        width: 280px;
+        height: 40px;
     }
 }
 @media only screen and (max-width:  22.8125em) /*365px*/ {
@@ -233,7 +336,7 @@
         font-size: 12px;
     }
 }
-@media (max-width: 18.75em)/*300px*/ {
+@media (max-width: 18.6875em)/*299px*/ {
     .edit-input {
         width: 225px;
         font-size: 12px;
@@ -259,6 +362,62 @@
     }
     .edit-password {
         font-size: 18px;
+    }
+    .login-heading {
+        font-size: 65px;
+    }
+    .social-item {
+        width: 250px;
+        height: 40px;
+    }
+    #user-name, #password {
+        width: 250px;
+        height: 35px;
+    }
+    .login-input {
+        font-size: 16px;
+    }
+    .login-forgot a {
+        font-size: 12px;
+    }
+    .errText {
+        font-size: 12px;
+    }
+    .button-item {
+        width: 250px;
+        font-size: 22px;
+        height: 45px;
+    }
+    .subBackgr > h1 {
+        font-size: 50px;
+    }
+    .inputType {
+        font-size: 16px;
+        width: 230px;
+        height: 35px;
+    }
+    .signUpBtn {
+        font-size: 18px;
+        width: 230px;
+        height: 45px;
+    }
+    .inputArea > .text {
+        width: 230px;
+    }
+    .SignIn > .signInWith {
+        width: 230px;
+    }
+    .inputArea > .SignIn {
+        width: 230px;
+    }
+    .image {
+        padding-left: 65px;
+    }
+    .details {
+        padding-left: 65px;
+    }
+    .price {
+        padding-left: 65px;
     }
 }
 

@@ -19,7 +19,7 @@ function handleSignUpForm(inforList) {
     signupBtn.onclick = function() {
       var fullName = document.getElementById("fullname").value;
       var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
+      var password = document.getElementById("Password").value;
       var confirmPassword = document.getElementById("confirm").value;
       var phoneNumber = document.getElementById("phone-number").value; 
       var notify = document.getElementById("notify");

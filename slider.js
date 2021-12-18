@@ -1,10 +1,10 @@
 $(document).ready(function(){
     $('.image-slider').slick({
-      infinite: false,
+      infinite: true,
       slidesToShow: 4,
       slidesToScroll: 2,
       autoplay: false,
-      autoplaySpeed: 1000,
+      autoplaySpeed: 5000,
       prevArrow: `<button type='button' class='slick-prev slick-arrow'><ion-icon name="chevron-back-outline"></ion-icon></button>`,
       nextArrow: `<button type='button' class='slick-next slick-arrow'><ion-icon name="chevron-forward-outline"></ion-icon></button>`,
       responsive: [
