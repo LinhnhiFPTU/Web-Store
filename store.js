@@ -1,3 +1,22 @@
+/*--------------------User-------------------------*/
+var usersAPI = "https://61b32a86af5ff70017ca1d02.mockapi.io/users";
+var logOut = document.querySelector("#logOut");
+var saveBtn = document.querySelector(".save");
+fetch(usersAPI)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(productList) {
+        handleStore(productList);
+    });
+function handleStore(productList) {
+    checkLogin();
+    logOut.onclick = function() {
+        delete localStorage.id;
+        window.location.assign("login.html");
+    };
+    handleProfile(productList);
+}
 function checkLogin() {
     if (!window.localStorage.id) {
       window.location.assign("login.html");
@@ -5,7 +24,6 @@ function checkLogin() {
   };
 /*--------------------Add to cart-------------------------*/
 const carts = document.querySelectorAll('.image-item');
-console.log(carts)
 function addCart(productImg, productName, productPrice) {
     var addtr = document.createElement("tr")
     // console.log(addtr)
@@ -29,7 +47,7 @@ function addCart(productImg, productName, productPrice) {
     for (var i=0; i<cartItem.length; i++) {
         var productT = document.querySelectorAll('.product-title')
         if(productT[i].innerHTML == productName) {
-            alert('Your product is already in the cart')
+            alert('Your product is already in cart')
         }
     }
     addtr.innerHTML = `
@@ -38,7 +56,7 @@ function addCart(productImg, productName, productPrice) {
         <td class="select-infor">
             <p class="product-title">${productName}</p>
         </td>
-        <td class="select-price"><p class="price"><span>${productPrice}</span><sup>đ</sup></p></td>
+        <td class="select-price"><p class="price"><span>${productPrice}</span> VND</p></td>
         <td class="select-button">
             <input type="number" min="1" value="1">                             
         </td>
@@ -52,7 +70,6 @@ function addCart(productImg, productName, productPrice) {
     cartTotal()
     deleteCart()
 }
-
 /*--------------------Total Price-------------------------*/
 function cartTotal() {
     var cartItem = document.querySelectorAll('tbody tr')
