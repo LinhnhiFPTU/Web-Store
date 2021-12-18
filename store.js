@@ -131,7 +131,7 @@ carts.forEach(function(getItem, index) {
 })
 function addCart(productImg, productName, productPrice) {
     var addtr = document.createElement("tr")
+    console.log(addtr)
     var trContent = productImg
     var cartTable = document.querySelector('tbody')
-    console.log(cartTable)
 }
