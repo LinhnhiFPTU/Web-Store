@@ -22,7 +22,7 @@ function addCart(productImg, productName, productPrice) {
     for (var i=0; i<cartItem.length; i++) {
         var productT = document.querySelectorAll('.product-title')
         if(productT[i].innerHTML == productName) {
-            alert('Your product is already in cart')
+
         }
     }
     addtr.innerHTML = `
