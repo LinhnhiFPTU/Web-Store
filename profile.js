@@ -2,7 +2,6 @@ var usersAPI = "https://61b32a86af5ff70017ca1d02.mockapi.io/users";
 var logOut = document.querySelector("#logOut");
 var updateInfor = document.querySelector("#updateProfile");
 var passChange = document.querySelector("#changePassword");
-/*------------Account infor------------*/
 fetch(usersAPI)
     .then(function(response) {
         return response.json();
