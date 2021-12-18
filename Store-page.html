@@ -47,7 +47,7 @@
                     </a>                    
                 </div>     
                 <div class="cart">
-                    <a ><img class="cart-icon" src="image/Icon-cart.png"></a>                   
+                    <label for="input-cart"><img class="cart-icon" src="image/Icon-cart.png"></label>                   
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                     <img class="search-icon-Mb" src="image/Icon-Search.png">
                 </div>
                 <div class="cart-Mb">
-                    <a href="cart.html"><img class="cart-icon" src="image/Icon-cart.png"></a>                   
+                    <label for="input-cart"><img class="cart-icon" src="image/Icon-cart.png"></label>                   
                 </div>
             </div>
         </div>
@@ -106,7 +106,7 @@
                 </div>
                 <!--Slider 1-->
                 <p class="title">NEW ARRIVAL</p>
-                <p class="supTitle">See more</p>
+                <p class="subTitle">See more</p>
                 <div class="image-slider">
                     <div class="image-item">
                         <div class="image">
@@ -207,7 +207,7 @@
                 </div>
                 <!--Slider 2-->
                 <p class="title">BEST SELLERS</p>
-                <p class="supTitle">See more</p>
+                <p class="subTitle">See more</p>
                 <div class="image-slider">
                     <div class="image-item">
                         <div class="image">
@@ -308,7 +308,7 @@
                 </div>
                 <!--Slider 3-->
                 <p class="title">LAST CHANCE</p>
-                <p class="supTitle">See more</p>
+                <p class="subTitle">See more</p>
                 <div class="image-slider">
                     <div class="image-item">
                         <div class="image">
@@ -409,7 +409,10 @@
                 </div>
             </div>
         </div>
-        <div class="cart-items" style="width: 100%; text-align: center;">
+        <input type="checkbox" name="" id="input-cart">
+        <label for="input-cart" class="layoutCart"></label> 
+        <div class="cart-items">
+            <label for="input-cart"><img class="removeIcn" src="image/delete-icon.png" alt=""></label>
             <table>
                 <thead>
                     <tr>
@@ -418,6 +421,7 @@
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Delete</th>
+                        <th>Total</th>
                     </tr>
                 </thead>  
                 <tbody>
@@ -427,7 +431,10 @@
             <div class="price-total">
                 <p>Total : <span>0</span> VND</p>
             </div>
-        </div>        
+            <div class="checkout-button">
+                <button class="checkout">CHECKOUT</button>
+            </div>
+        </div>    
         <div class="footer-container">
             <div class="about">
                 <p class="footer">About us</p>
