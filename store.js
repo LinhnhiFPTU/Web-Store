@@ -43,13 +43,18 @@ function toast({
     const main = document.getElementById('alert');
     if (main) {
         const toast = document.createElement('div');
+        toast.onclick = function(e) {
+            if (e.target.closest('.close')) {
+                main.removeChild(toast);
+            }
+        }
         toast.style.animation = `slideInLeft ease.3s, fadeOut linear 1s 1s forwards`;
         toast.classList.add('toast',`toast--${type}`);
         toast.innerHTML = `
         <div class="toast toast-success">
         <span class="fas fa-check-circle"></span>
         <span class="message">${message}</span>
-        <span class="fas fa-times"></span>
+        <div class="close"><span class="fas fa-times"></span></div>
         </div>
         `;
         main.appendChild(toast)
@@ -78,9 +83,8 @@ function addCart(productImg, productName, productPrice) {
             <input type="number" min="1" value="1">                             
         </td>
         <td class="select-delete"><img class="delete-icon" src="image/delete-icon.png"></td>
-        <td class="total-price"><p><span>${productPrice}</span> VND</p></td>
     </tr>
-    `
+    `;
     var cartTable = document.querySelector('tbody');
     cartTable.append(addtr);
     cartTotal();

@@ -603,7 +603,7 @@
     border-radius: 4px;
     border-left: 8px solid rgb(0, 179, 89);
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.8);
-    margin-top: 10px;
+    transition: all linear .3s;
 }
 .toast {
     display: flex;
