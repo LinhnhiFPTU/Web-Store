@@ -381,12 +381,6 @@
     font-family: 'Quicksand', sans-serif;
 } 
  /*------------------------------------Your cart--------------------------*/
-.cart-container {
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    padding-left: 370px;
-}
 .cart-header p{
     font-style: normal;
     font-weight: bold;
@@ -457,7 +451,6 @@
     width: 235px;
     height: 245px;
 }
-
 .select-button input{
     width: 40px;
     font-size: 21px;
@@ -469,7 +462,13 @@
     border: none;
     width: 30px;
 }
-.price-total {
+.total-price {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 30px;
+}
+.cart-total {
     font-style: normal;
     font-weight: bold;
     font-size: 21px;
@@ -593,4 +592,51 @@
     padding-top: 5px;
     padding-bottom: 5px;
     margin: 0 auto;
+}
+#alert {
+    z-index: 3;
+    position: fixed;
+    right: 0;
+    top: 35px;
+    background-color: white;
+    padding-left: 20px;
+    border-radius: 4px;
+    border-left: 8px solid rgb(0, 179, 89);
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.8);
+    margin-top: 10px;
+}
+.toast {
+    display: flex;
+    align-items: center;
+}
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 30px));
+    }
+    to {
+        opacity: 3;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+} 
+.fa-check-circle {
+    font-size: 30px;
+    color: rgb(0, 204, 102);
+}
+.message {
+    padding: 0 20px;
+    font-size: 20px;
+    color: rgb(0, 153, 77);
+}
+.fa-times {
+    background: white;
+    padding: 20px 15px;
+    color: rgb(0, 153, 77);
+    font-size: 20px;
+    cursor: pointer;
 }
