@@ -25,16 +25,16 @@ function handleSignUpForm(inforList) {
       var notify = document.getElementById("notify");
       var email = "";
       var address = "";
+      var cart = [];
       var formData = {
-        name: fullName,
+        fullname: fullName,
         username: username,
         password: password,
-        confirmPassword: confirmPassword,
-        phoneNumber: phoneNumber,
+        phonenumber: phoneNumber,
         email: email,
         address: address,
+        cart: cart
       };
-      createForm(formData);
 
       if (!fullName || !username || !password || !confirmPassword || !phoneNumber) {
         notify.innerHTML = "Please do not leave these fields blank!";
@@ -44,6 +44,7 @@ function handleSignUpForm(inforList) {
         notify.innerHTML = "Confirm Password is INCORRECT"
       }
       else {
+        createForm(formData);
         alert('Register Successfully');
         window.location.assign("login.html");  
       }

@@ -1,4 +1,4 @@
-@media (max-width: 75em) {
+@media (max-width: 75em) /*1200px*/{
     body {
         overflow-x: hidden;
     }
@@ -92,6 +92,10 @@
         width: 180px;
         height: 195px;
         object-fit: cover;
+    }
+    .slick-arrow {
+        width: 40px;
+        height: 40px;
     }
     .contact img{
         width: 26px;

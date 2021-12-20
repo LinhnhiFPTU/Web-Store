@@ -91,6 +91,7 @@
     padding-left: 13px;
     text-decoration: none;
     padding: 0;
+    cursor: pointer;
 }
 .link-page:hover{
     color: blue;
@@ -206,6 +207,7 @@
 }
 .link-page-Mb{
     display: none;
+    cursor: pointer;
 }
 .remove-icon{
     display: none;
@@ -417,6 +419,7 @@
     position: absolute;
     right: 0;
     margin: 15px;
+    cursor: pointer;
 }
 .cart-items {
     text-align: center;
@@ -468,6 +471,9 @@
     font-size: 21px;
     border: none;
     width: 30px;
+}
+.delete-icon {
+    cursor: pointer;
 }
 .price-total {
     font-style: normal;

@@ -1,7 +1,9 @@
 var usersAPI = "https://61b32a86af5ff70017ca1d02.mockapi.io/users";
-var logOut = document.querySelector("#logOut");
+var logOut = document.querySelectorAll("#logOut");
 var updateInfor = document.querySelector("#updateProfile");
 var passChange = document.querySelector("#changePassword");
+var cartIcon = document.querySelectorAll(".cart-icon");
+var userCart;
 fetch(usersAPI)
     .then(function(response) {
         return response.json();
@@ -10,12 +12,32 @@ fetch(usersAPI)
         handleStore(userList);
     });
 function handleStore(userList) {
-    checkLogin();
-    logOut.onclick = function() {
-        delete localStorage.id;
-        window.location.assign("login.html");
-    };
     handleProfile(userList);
+    checkLogin();
+    checkLogOut();
+    checkOpenCart(userList);
+}
+function checkOpenCart(userList) {
+    userList.forEach(function(user) {
+        if(user.id==localStorage.id) {
+           userCart = user.cart;
+        }
+    })
+    cartIcon.forEach(function(item) {
+        item.addEventListener('click', function(event) {
+            printItemCart();
+            cartTotal();
+            deleteCart();
+         })
+     })
+}
+function checkLogOut() {
+    logOut.forEach(function(item) {
+       item.addEventListener('click', function(event) {
+            delete localStorage.id;
+            window.location.assign("login.html");
+        })
+    })
 }
 function checkLogin() {
   if (!window.localStorage.id) {
@@ -114,4 +136,83 @@ function updatePassword(newPass) {
     })
     .then(data=> 
         alert("Successfully change your password!"))
+}
+function printItemCart() {
+    userCart.forEach(function(item) {
+        var addtr = document.createElement("tr")
+    addtr.innerHTML = `
+    <tr>
+        <td class="select-image"><img src="${item.image}"></td>
+        <td class="select-infor">
+            <p class="product-title">${item.name}</p>
+        </td>
+        <td class="select-price"><p class="price"><span>${item.price}</span> VND</p></td>
+        <td class="select-button">
+            <input class= "quantity" type="number" min="1" value="${item.quantity}">                             
+        </td>
+        <td class="select-delete"><img class="delete-icon" src="image/delete-icon.png"></td>
+    </tr>
+    `
+    var cartTable = document.querySelector('tbody')
+    cartTable.append(addtr)
+    })
+}
+function cartTotal() {
+    var cartItem = document.querySelectorAll('tbody tr')
+    var totalB = 0
+    for (var i=0; i<cartItem.length; i++) {
+        var inputValue = cartItem[i].querySelector('input').value
+        var productName = cartItem[i].querySelector('.product-title').textContent
+        var productPrice = cartItem[i].querySelector('.select-price span').innerHTML
+        var totalA = inputValue*productPrice*1000
+        totalB = totalB + totalA
+        userCart.forEach(function(item) {
+            if(item.name == productName) {
+                var numbers = cartItem[i].querySelector('input').value;
+                item.quantity = numbers;
+                updateAPI();
+            }
+        } )
+    }
+    var cartTotal = document.querySelector('.price-total span')
+    cartTotal.innerHTML = totalB.toLocaleString('de-DE')
+    inputChange()
+}
+function inputChange() {
+    var cartItem = document.querySelectorAll('tbody tr')
+    for (var i=0; i<cartItem.length; i++) {
+        var inputValue = cartItem[i].querySelector('input')
+        inputValue.addEventListener('change', function() {
+            cartTotal()
+            
+        })
+    }
+}
+function deleteCart() {
+    var cartItem = document.querySelectorAll('tbody tr')
+    for (var i=0; i<cartItem.length; i++) {
+        var deleteProduct = document.querySelectorAll('.delete-icon')
+    deleteProduct[i].addEventListener('click', function(event) {
+            var cartDelete = event.target
+            var deleteItem = cartDelete.parentElement.parentElement
+            var productName = deleteItem.querySelector('.product-title').innerText
+            deleteItem.remove()
+            cartTotal()
+            var index = userCart.findIndex(function(item) {
+                return item.name == productName 
+            })
+            userCart.splice(index,1);
+            updateAPI()
+        })
+    }
+}
+const updateAPI = async function() {
+    var data= {cart: userCart}
+    var update = await fetch(usersAPI+ '/' + localStorage.id,{
+        method: 'PUT',
+        headers:{
+        'Content-Type':'application/json'
+        },
+        body: JSON.stringify(data)
+    })
 }
