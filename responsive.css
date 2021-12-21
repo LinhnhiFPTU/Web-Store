@@ -136,6 +136,7 @@
     }
     .infor-header {
         margin-top: 12px;
+        text-decoration: underline;
     }
     .infor-container {
         align-items: center;
