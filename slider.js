@@ -23,7 +23,7 @@ $(document).ready(function(){
           }
         },
         {
-          breakpoint: 300,
+          breakpoint: 330,
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -55,7 +55,7 @@ $(document).ready(function(){
           }
         },
         {
-          breakpoint: 300,
+          breakpoint: 330,
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -87,7 +87,7 @@ $(document).ready(function(){
           }
         },
         {
-          breakpoint: 300,
+          breakpoint: 330,
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,

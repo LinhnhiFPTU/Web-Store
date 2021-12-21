@@ -82,7 +82,7 @@ function getItem() {
             var productImg = product.querySelector('img').src
             var productName = product.querySelector('.details').textContent
             var productPrice = product.querySelector('.price span').innerText
-            // showSuccessMessage();
+            showSuccessMessage();
             addCart(productImg, productName, productPrice)
             if(userCart.length == 0) {
                 var data = {
@@ -157,13 +157,18 @@ function toast({
     const main = document.getElementById('alert');
     if (main) {
         const toast = document.createElement('div');
+        toast.onclick = function(e) {
+            if (e.target.closest('.close')) {
+                main.removeChild(toast);
+            }
+        }
         toast.style.animation = `slideInLeft ease.3s, fadeOut linear 1s 1s forwards`;
         toast.classList.add('toast',`toast--${type}`);
         toast.innerHTML = `
-        <div class="toast toast-success">
+        <div class="toast toast-success backgrMess">
         <span class="fas fa-check-circle"></span>
         <span class="message">${message}</span>
-        <span class="fas fa-times"></span>
+        <div class="close"><span class="fas fa-times"></span></div>
         </div>
         `;
         main.appendChild(toast)
@@ -232,6 +237,7 @@ function deleteCart() {
 }
 function success() {
     var checkOut = document.querySelector('.checkout');
+    var newCart = [];
     checkOut.addEventListener('click', function() {
         swal({
             title: "Thank You",
@@ -239,5 +245,12 @@ function success() {
             icon: "success",
             button: "OK",
           });
+        var cartItem = document.querySelectorAll('tbody tr')
+        cartItem.forEach(function(item) {
+            item.remove();
+        })
+        cartTotal()
+        userCart = newCart;
+        updateAPI();
     })
 }
