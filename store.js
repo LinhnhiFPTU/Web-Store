@@ -60,7 +60,6 @@ function printItemCart() {
 const carts = document.querySelectorAll('.image-item');
 function addCart(productImg, productName, productPrice) {
     var addtr = document.createElement("tr")
-    // console.log(addtr)
     var trContent = productImg
     var cartTable = document.querySelector(".subbody")
     console.log(cartTable)
@@ -76,13 +75,14 @@ const updateAPI = async function() {
     })
 }
 function getItem() {
-    carts.forEach(function(getItem, index) {
+    carts.forEach(function(getItem) {
         getItem.addEventListener('click', function(event) {
             var btnItem = event.target;
             var product = btnItem.parentElement;
             var productImg = product.querySelector('img').src
             var productName = product.querySelector('.details').textContent
             var productPrice = product.querySelector('.price span').innerText
+            // showSuccessMessage();
             addCart(productImg, productName, productPrice)
             if(userCart.length == 0) {
                 var data = {
@@ -119,7 +119,6 @@ function getItem() {
     })
 }
 function addCart(productImg, productName, productPrice) {
-    var addtr = document.createElement("tr")
     var cartItem = document.querySelectorAll('tbody tr')
     for (var i=0; i<cartItem.length; i++) {
         var productT = document.querySelectorAll('.product-title')
@@ -130,6 +129,7 @@ function addCart(productImg, productName, productPrice) {
             return;
         }
     }
+    var addtr = document.createElement("tr");
     addtr.innerHTML = `
     <tr>
         <td class="select-image"><img src="${productImg}"></td>
@@ -149,10 +149,40 @@ function addCart(productImg, productName, productPrice) {
     cartTotal()
     deleteCart()
 }
-/*--------------------Total Price-------------------------*/
+function toast({
+    message = '',
+    type = 'success',
+    duration = 3000
+}) {
+    const main = document.getElementById('alert');
+    if (main) {
+        const toast = document.createElement('div');
+        toast.style.animation = `slideInLeft ease.3s, fadeOut linear 1s 1s forwards`;
+        toast.classList.add('toast',`toast--${type}`);
+        toast.innerHTML = `
+        <div class="toast toast-success">
+        <span class="fas fa-check-circle"></span>
+        <span class="message">${message}</span>
+        <span class="fas fa-times"></span>
+        </div>
+        `;
+        main.appendChild(toast)
+        setTimeout(function() {
+            main.removeChild(toast);
+        }, duration +1000)
+    }
+}
+function showSuccessMessage() {
+    toast({
+        message: 'Successfully added to cart',
+        type: 'success',
+        duration: 1000,
+      });
+}
+/*--------------------Cart Total-------------------------*/
 function cartTotal() {
-    var cartItem = document.querySelectorAll('tbody tr')
-    var totalB = 0
+    var cartItem = document.querySelectorAll('tbody tr');
+    var totalB = 0;
     for (var i=0; i<cartItem.length; i++) {
         var inputValue = cartItem[i].querySelector('input').value
         var productName = cartItem[i].querySelector('.product-title').textContent
@@ -167,9 +197,10 @@ function cartTotal() {
             }
         } )
     }
-    var cartTotal = document.querySelector('.price-total span')
-    cartTotal.innerHTML = totalB.toLocaleString('de-DE')
-    inputChange()
+    var cartTotal = document.querySelector('.cart-total span')
+    cartTotal.innerHTML = totalB.toLocaleString('de-DE');
+    inputChange();
+    success()
 }
 function inputChange() {
     var cartItem = document.querySelectorAll('tbody tr')
@@ -177,7 +208,6 @@ function inputChange() {
         var inputValue = cartItem[i].querySelector('input')
         inputValue.addEventListener('change', function() {
             cartTotal()
-            
         })
     }
 }
@@ -199,4 +229,15 @@ function deleteCart() {
             updateAPI()
         })
     }
+}
+function success() {
+    var checkOut = document.querySelector('.checkout');
+    checkOut.addEventListener('click', function() {
+        swal({
+            title: "Thank You",
+            text: "Your order has been successfully completed!",
+            icon: "success",
+            button: "OK",
+          });
+    })
 }

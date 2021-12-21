@@ -184,7 +184,6 @@ function inputChange() {
         var inputValue = cartItem[i].querySelector('input')
         inputValue.addEventListener('change', function() {
             cartTotal()
-            
         })
     }
 }
