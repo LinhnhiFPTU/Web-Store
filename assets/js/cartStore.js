@@ -43,38 +43,34 @@ function cartTotal() {
   for (var i=0; i<cartItem.length; i++) {
       var inputValue = cartItem[i].querySelector('input').value
       var productPrice = cartItem[i].querySelector('.select-price span').innerHTML
+      var productName = cartItem[i].querySelector('.product-title').textContent
       var totalA = inputValue*productPrice*1000
       totalB = totalB + totalA
+      userCart.forEach(function(item) {
+        if(item.name == productName) {
+            var numbers = cartItem[i].querySelector('input').value;
+            item.quantity = numbers;
+        }
+      } )
   }
+  updateAPI();
   var cartTotal = document.querySelector('.cart-total span')
   cartTotal.innerHTML = totalB.toLocaleString('de-DE');
 }
 function inputChange() {
   var cartItem = document.querySelectorAll('tbody tr')
-  console.log(cartItem)
   for (var i=0; i<cartItem.length; i++) {
     var inputValue = cartItem[i].querySelector('input')
-    var input = cartItem[i];
-    inputValue.addEventListener('change', function() {
-      for(var j=0; j<cartItem.length; j++){
-        var productName = cartItem[j].querySelector('.product-title').textContent
-        for(var i=0; i<userCart.length; i++) {
-          if(userCart[i].name == productName) {
-              var numbers = input.querySelector('input').value;
-              userCart[i].quantity = numbers;
-              updateAPI();
-          }
-        }
-      }
-      cartTotal()
-    })
+        inputValue.addEventListener('change', function() {
+            cartTotal()
+        })
   }
 }
 function deleteCart() {
   var cartItem = document.querySelectorAll('tbody tr')
   for (var i=0; i<cartItem.length; i++) {
       var deleteProduct = document.querySelectorAll('.delete-icon')
-  deleteProduct[i].addEventListener('click', function(event) {
+      deleteProduct[i].addEventListener('click', function(event) {
           var cartDelete = event.target
           var deleteItem = cartDelete.parentElement.parentElement
           var productName = deleteItem.querySelector('.product-title').innerText
