@@ -5,12 +5,17 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="content.css">
-        <link rel="stylesheet" href="responsive.css">
+        <link rel="stylesheet" href="assets/css/content.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Roboto&family=Sansita+Swashed:wght@800;900&family=Sansita:ital@1&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">   
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Roboto&family=Sansita+Swashed:wght@800;900&family=Sansita:ital@1&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet"> 
+        <script>
+            if (localStorage.id==undefined) {
+                window.location.assign("login.html");
+            }
+        </script>
     </head>
     <body>
         <div class="header-container">
@@ -45,7 +50,7 @@
         </div>
         <div class="header-container-mobile">
             <p class="slogan-Mb">Active wear – Active live </p>
-            <a href="Store-page.html" class="shop-name-Mb"><p>Sunnyclo</p></a>
+            <a href="storePage.html" class="shop-name-Mb"><p>Sunnyclo</p></a>
             <div class="tool-bar">
                 <label for="input-menu" class="menu">
                     <img class="menu-icon" src="image/menu-icon.png" alt="">
@@ -66,7 +71,7 @@
                 <label for="input-menu">
                     <img class="remove-icon" src="image/delete-icon.png" alt="">
                 </label>
-                <a href="Store-page.html" class="shop-name">
+                <a href="storePage.html" class="shop-name">
                     Sunnyclo
                 </a>
                 <div class="product-name">
@@ -120,11 +125,11 @@
                     <div class="change-pass">
                         <div class="edit-password">Change password</div>
                         <div class="edit-type">
-                            <input class="edit-input" id="pass-now" type="text" placeholder="password now"> 
+                            <input class="edit-input" id="pass-now" type="password" placeholder="password now"> 
                             <br>
-                            <input class="edit-input" id="pass-new" type="text" placeholder="new password">
+                            <input class="edit-input" id="pass-new" type="password" placeholder="new password">
                             <br>
-                            <input class="edit-input" id="confirm" type="text" placeholder="confirm new password">
+                            <input class="edit-input" id="confirm" type="password" placeholder="confirm new password">
                             <div class="errNote"></div> 
                             <button class="changePassBtn" onclick="changePass()">Change password</button>
                         </div>
@@ -154,7 +159,7 @@
                 <p>Total : <span>0</span> VND</p>
             </div>
             <div class="checkout-button">
-                <button class="checkout">CHECKOUT</button>
+                <button onclick="success()" class="checkout">CHECKOUT</button>
             </div>
         </div>
         <div class="footer-container">
@@ -170,6 +175,70 @@
                 </div>
             </div>
         </div>
-        <script src="profile.js"></script>
+        <script>
+            var updateInfor = document.querySelector("#updateProfile");
+            var passChange = document.querySelector("#changePassword");
+            updateInfor.addEventListener('click', function(event) {
+                document.querySelector(".change-pass").style.display ="none";
+                document.querySelector(".edit").style.display = "flex";
+            })
+            passChange.addEventListener('click', function(event) {
+                document.querySelector(".change-pass").style.display = "flex";
+                document.querySelector(".edit").style.display = "none";
+            })
+        </script>
+        <script>
+            document.querySelector(".save").disabled = true;
+            document.querySelector(".save").style.background = 'rgba(32, 145, 30, 0.5)';
+            function activeBtn() {
+                document.querySelector(".save").disabled = false;
+                document.querySelector(".save").style.background = 'rgba(32, 145, 30, 1)';
+            };
+        </script>
+        <script>
+            var logOut = document.querySelectorAll("#logOut");
+                logOut.forEach(function(item) {
+                item.addEventListener('click', function(event) {
+                    delete localStorage.id;
+                    window.location.assign("login.html");
+                })
+            })
+        </script>
+        <script src="assets/js/profile.js"></script>
+        <script>
+            fetch(usersAPI+'/'+localStorage.id)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(user) {
+                    var name = document.querySelector("#name");
+                    var phone = document.querySelector("#phone");
+                    var address = document.querySelector("#address");
+                    var email = document.querySelector("#email");
+                    if (user.id == localStorage.id){
+                        name.value = `${user.fullname}`;
+                        phone.value = `${user.phonenumber}`;
+                        if(address.value != undefined) address.value = `${user.address}`;
+                        if(email.value != undefined) email.value = `${user.email}`;
+                    }
+                });
+        </script>
+        <script src="assets/js/cartStore.js"></script>
+        <script>
+            function success() {
+                var checkOut = document.querySelector('.checkout');
+                var newCart = [];
+                swal({
+                    title: "Thank You",
+                    text: "Your order has been successfully completed!",
+                    icon: "success",
+                    button: "OK",
+                });
+                clearCart()
+                cartTotal()
+                userCart = newCart;
+                updateAPI(); 
+            }
+        </script>
     </body>
 </html>

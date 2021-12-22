@@ -3,7 +3,7 @@
     padding:0px;
   }
 body{
-    background-image: url(image/background.jpg);
+    background-image: url(/Web-Store/image/background.jpg);
     background-size: cover;
     max-height: max-content;
     background-repeat: no-repeat;

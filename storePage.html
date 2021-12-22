@@ -25,8 +25,13 @@
             href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
         />
         <link rel="stylesheet" href="slider.css">
-        <link rel="stylesheet" href="content.css">
-        <link rel="stylesheet" href="responsive.css">
+        <link rel="stylesheet" href="assets/css/content.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <script>
+            if (localStorage.id==undefined) {
+                window.location.assign("login.html");
+             }
+        </script>
     </head>
     <body>
         <div class="header-container">
@@ -61,7 +66,7 @@
         </div>
         <div class="header-container-mobile">
             <p class="slogan-Mb">Active wear – Active live </p>
-            <a href="Store-page.html" class="shop-name-Mb"><p>Sunnyclo</p></a>
+            <a href="storePage.html" class="shop-name-Mb"><p>Sunnyclo</p></a>
             <div class="tool-bar">
                 <label for="input-menu" class="menu">
                     <img class="menu-icon" src="image/menu-icon.png" alt="">
@@ -82,7 +87,7 @@
                 <label for="input-menu">
                     <img class="remove-icon" src="image/delete-icon.png" alt="">
                 </label>
-                <a href="Store-page.html" class="shop-name">
+                <a href="storePage.html" class="shop-name">
                     Sunnyclo
                 </a>
                 <div class="product-name">
@@ -440,7 +445,7 @@
                 <p>Total : <span>0</span> VND</p>
             </div>
             <div class="checkout-button">
-                <button class="checkout">CHECKOUT</button>
+                <button onclick="success()" class="checkout">CHECKOUT</button>
             </div>
         </div>    
         <div class="footer-container">
@@ -468,7 +473,64 @@
                   type="text/javascript"
                   src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
                 ></script>
-        <script src="slider.js"></script>
-        <script src="store.js"></script>
+        <script src="assets/js/slider.js"></script>
+        <script>
+            var logOut = document.querySelectorAll("#logOut");
+            logOut.forEach(function(item) {
+                item.addEventListener('click', function(event) {
+                    delete localStorage.id;
+                    window.location.assign("login.html");
+                })
+            })
+        </script>
+        <script src="assets/js/cartStore.js"></script>
+        <script>
+            function success() {
+                var checkOut = document.querySelector('.checkout');
+                var newCart = [];
+                swal({
+                    title: "Thank You",
+                    text: "Your order has been successfully completed!",
+                    icon: "success",
+                    button: "OK",
+                });
+                clearCart()
+                cartTotal()
+                userCart = newCart;
+                updateAPI(); 
+            }
+        </script>
+        <script src="assets/js/getItem.js"></script>
+        <script>
+            function toast({
+                message = '',
+                type = 'success',
+                duration = 3000
+            })
+            {
+                const main = document.getElementById('alert');
+                if (main) {
+                    const toast = document.createElement('div');
+                    toast.onclick = function(e) {
+                        if (e.target.closest('.close')) {
+                            main.removeChild(toast);
+                        }
+                    }
+                    toast.style.animation = `slideInLeft ease.3s, fadeOut linear 1s 1s forwards`;
+                    toast.classList.add('toast',`toast--${type}`);
+                    toast.innerHTML = `
+                    <div class="toast toast-success backgrMess">
+                    <span class="fas fa-check-circle"></span>
+                    <span class="message">${message}</span>
+                    <div class="close"><span class="fas fa-times"></span></div>
+                    </div>
+                    `;
+                    main.appendChild(toast)
+                    setTimeout(function() {
+                        main.removeChild(toast);
+                    }, duration +1000)
+                }
+            }
+        </script>
     </body>
 </html>

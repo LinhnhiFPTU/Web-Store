@@ -15,7 +15,7 @@ function handleLogInForm(userList) {
         for (const user of userList) {
             if (user.username == userName && user.password == password){
                 localStorage.id = `${user.id}`;
-                window.location.assign("Store-page.html");
+                window.location.assign("storePage.html");
                 return;
             } 
         }
