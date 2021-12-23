@@ -45,7 +45,7 @@ function changePass() {
             else if (newPass != confirmNewPass) 
                 err.innerHTML = "Confirm password is INCORRECT";
             else {
-                err.innerHTML = "Successfully change your password!";
+                err.innerHTML = "";
                 updatePassword(newPass);
             }
         }
