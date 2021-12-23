@@ -44,8 +44,10 @@ function changePass() {
                 err.innerHTML = "New password cannot like old password";
             else if (newPass != confirmNewPass) 
                 err.innerHTML = "Confirm password is INCORRECT";
-            else 
+            else {
+                err.innerHTML = "Successfully change your password!";
                 updatePassword(newPass);
+            }
         }
     });
 }
