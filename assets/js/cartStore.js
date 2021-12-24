@@ -75,12 +75,11 @@ function deleteCart() {
           var deleteItem = cartDelete.parentElement.parentElement
           var productName = deleteItem.querySelector('.product-title').innerText
           deleteItem.remove()
-          cartTotal()
           var index = userCart.findIndex(function(item) {
               return item.name == productName 
           })
           userCart.splice(index,1);
-          updateAPI()
+          cartTotal()
       })
   }
 }
