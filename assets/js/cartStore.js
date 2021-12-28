@@ -53,9 +53,17 @@ function cartTotal() {
         }
       } )
   }
-  updateAPI();
+  if(totalB == 0) {
+    document.querySelector(".checkout").disabled = true;
+    document.querySelector(".checkout").style.background = 'rgba(0, 0, 0, 0.5)';
+  }
+  else{
+    document.querySelector(".checkout").disabled = false;
+    document.querySelector(".checkout").style.background = 'rgba(0, 0, 0, 1)';
+  }
   var cartTotal = document.querySelector('.cart-total span')
   cartTotal.innerHTML = totalB.toLocaleString('de-DE');
+  updateAPI();
 }
 function inputChange() {
   var cartItem = document.querySelectorAll('tbody tr')

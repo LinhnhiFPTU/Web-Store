@@ -39,7 +39,7 @@ function changePass() {
     .then(function(user) {
         if (user.id == localStorage.id){
             if(user.password != nowPass) 
-                 err.innerHTML = "Your old password is INCORRECT";
+                 err.innerHTML = "Your now password is INCORRECT";
             else if (user.password == newPass)
                 err.innerHTML = "New password cannot like old password";
             else if (newPass != confirmNewPass) 
